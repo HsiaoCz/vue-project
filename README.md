@@ -135,11 +135,11 @@ module.exports = defineConfig({
 
 ### 2、登录页面
 
-1. 在view下面写一个页面 LoginView
+1. 在 view 下面写一个页面 LoginView
 
-这里使用输入vb 选择vue3 ts 可以快速创建一个模板
+这里使用输入 vb 选择 vue3 ts 可以快速创建一个模板
 
-然后在router里面添加一个路由
+然后在 router 里面添加一个路由
 
 ```javascript
 {
@@ -151,3 +151,34 @@ module.exports = defineConfig({
     component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
   }
 ```
+
+```javascript
+<template>
+// 这里定义一个class
+   <div class="login-box">
+        登录页面
+    </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+    setup() {
+
+
+        return {}
+    }
+})
+</script>
+// 这里使用css预处理器
+<style lang="scss" scoped>
+.login-box {
+    width: 100%;
+    height: 100%;
+    background: url("../assets/loginbackgrand.jpg");
+}
+</style>
+```
+
+我发现存在一个问题，就是整的图片不是大了就是小了
